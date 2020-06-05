@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "noUnusedParameters": true,
-        "module": "commonjs",
+        // "module": "commonjs",
         "target": "es6",
         "sourceMap": true,
         "jsx": "preserve",
@@ -29,29 +29,9 @@
         "node_modules",
         "lib",
         "es",
-        "./*.*"
+        "build",
+        "doc",
+        "*.md",
+        "./*.js"
     ]
 }
-// {
-//     "compilerOptions": {
-//         "removeComments": true,
-//         "experimentalDecorators": true,
-//         "emitDecoratorMetadata": true,
-//         "strictNullChecks": true,
-//         "moduleResolution": "node",
-//         "jsx": "preserve",
-//         "noUnusedParameters": true,
-//         "noUnusedLocals": true,
-//         "allowSyntheticDefaultImports": true,
-//         "target": "es6",
-//         "noImplicitAny": true,
-//         "declaration": true,
-//         "forceConsistentCasingInFileNames": true
-//     },
-//     "exclude": [
-//         "node_modules",
-//         "lib",
-//         "es"
-//     ],
-//     "compileOnSave": false
-// }
