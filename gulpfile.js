@@ -5,25 +5,30 @@ const gulp = require("gulp"),
 	babelConfig = require('./babelConfig.js')(false),
 	libDir = "./lib",
 	esDir="./es",
-	,
 	babel = require('gulp-babel');
 	
-	lib_tsConfig =getTsConfig(true);
-	es_tsConfig =getTsConfig();
+	
 
 const tsResult = gulp.src([
-	'src/**/*.tsx',
-	'src/**/*.ts',
-	'typings.d.ts'
-]);
+		'src/**/*.tsx',
+		'src/**/*.ts',
+		'typings.d.ts'
+	]),
+	lib_tsConfig =getTsConfig(),
+	es_tsConfig =getTsConfig(true);
+
 function getTsConfig(module){
 	delete babelConfig.cacheDirectory;
-	tsConfig = require('./tsConfig');
+	const tsConfig = require('./tsConfig')();
 	if(module){
-		tsConfig.module= "commonjs";
-	} else {
+		// tsConfig.module= "commonjs";
 		tsConfig.moduleResolution= "node";
+	} 
+	else {
+		tsConfig.module= "commonjs";
+		// tsConfig.moduleResolution= "node";
 	}
+	console.log(tsConfig)
 	return tsResult.pipe(ts.createProject(tsConfig)());
 }
 gulp.task('lib-ts', done => {
@@ -46,9 +51,17 @@ gulp.task('less', done => {
 	gulp.src('src/**/*.less')
 		.pipe(autoprefixer())
 		.pipe(less())
-		.pipe(gulp.dest(libDir));
+		.pipe(gulp.dest(libDir))
+		.pipe(gulp.dest(esDir));
 	done()
 });
-gulp.task('default', gulp.series('lib-ts', 'lib-tsd','es-ts', 'es-tsd', 'less', done => {
+gulp.task('copyLess',  function() {
+	return gulp.src([
+		'src/**/*.less',
+	])
+	.pipe(gulp.dest(esDir))
+	.pipe(gulp.dest(libDir))
+  });
+gulp.task('default', gulp.series('lib-ts', 'lib-tsd', 'less','es-ts', 'es-tsd', 'copyLess', done => {
 	done();
 }));

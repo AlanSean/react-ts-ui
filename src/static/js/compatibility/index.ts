@@ -1,7 +1,7 @@
 if (window.history['scrollRestoration']) {
     history.scrollRestoration = 'manual'; //改为manual之后，就不会记录滚动位置
 }
-import VCurve from './VCurve';
+import VCurve from 'vcurve';
 const vcurve = new VCurve({
     duration: 1
 })

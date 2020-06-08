@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = () => ({
   "noUnusedParameters": true,
   "target": "es6",
   "sourceMap": true,
@@ -18,6 +18,6 @@ module.exports = {
   "noImplicitAny": true,
   "baseUrl": ".",
   "paths": {
-      "@/*": ["./src/*"]
+    "@/*": ["./src/*"]
   }
-}
+})

@@ -29,7 +29,6 @@ class Tablist extends React.Component<TablistProps, TablistState>{
                 tablistWidth,
                 tabs,
                 pullToRefresh,
-                pullOnLoad
             } = props,
             clientWidth = document.documentElement.clientWidth;
         //选中class
@@ -44,7 +43,7 @@ class Tablist extends React.Component<TablistProps, TablistState>{
         this.tabWidth = barWidth ? this.tablistWidth / tabs.length: 1/tabs.length;
         this.barWidth = barWidth && barWidth  / (this.tablistWidth * clientWidth) || this.tabWidth ;
         this.pullToRefresh = !!pullToRefresh;
-        this.pullToRefresh = !!pullOnLoad;
+        // this.pullToRefresh = !!pullOnLoad;
 
         this.state = {
             activeIndex: Number(props.initialPage) || 0,
@@ -116,12 +115,12 @@ class Tablist extends React.Component<TablistProps, TablistState>{
         this.props.onClick && this.props.onClick(tab, index);
     }
     childredInit = (index:number) => {
-        const { children } = this.props,
+        const { children,pullOnLoad } = this.props,
              { activeIndex, isInit } = this.state;
        
         if (isInit[index] || activeIndex == index) {
             const newChild = children && children.hasOwnProperty('length') ? children[index] : children;
-            if (this.pullToRefresh || this.pullOnLoad){
+            if (this.pullToRefresh || !!pullOnLoad){
                 return React.cloneElement(newChild, { ref: this.childRefs[index] })
             } else {
                 return newChild;
@@ -198,7 +197,7 @@ class Tablist extends React.Component<TablistProps, TablistState>{
         )
     }
     render(){
-        const { tabs, fixedTop} = this.props,
+        const { tabs, fixedTop,pullOnLoad} = this.props,
             { activeIndex, isFixed} = this.state;
         return (
             <div 
@@ -235,7 +234,7 @@ class Tablist extends React.Component<TablistProps, TablistState>{
                     </div>
                 </div>
                 {
-                    this.pullToRefresh || this.pullOnLoad ? this.PullToRefreshElement() : this.contentWarpElmen()
+                    this.pullToRefresh || !!pullOnLoad ? this.PullToRefreshElement() : this.contentWarpElmen()
                 }
             </div>
         )
