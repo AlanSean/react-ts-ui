@@ -1,0 +1,28 @@
+.spinner {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    margin-right: 10px;
+    .snake {
+        animation: mint-spinner-rotate 0.8s infinite linear;
+        border: 0.1em solid transparent;
+        border-radius: 50%;
+        border-top-color: #666;
+        border-left-color: #666;
+        border-bottom-color: #666;
+        height: 1em;
+        width: 1em;
+    }
+}
+
+@keyframes mint-spinner-rotate {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

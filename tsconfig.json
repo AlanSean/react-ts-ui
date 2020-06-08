@@ -1,37 +1,39 @@
 {
     "compilerOptions": {
-        "noUnusedParameters": true,
-        // "module": "commonjs",
-        "target": "es6",
+        "module": "esnext",
+        "target": "esnext",
+        "lib": ["esnext", "dom"],
         "sourceMap": true,
+        "baseUrl": ".",
         "jsx": "preserve",
-        "allowSyntheticDefaultImports": true,
         "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
-        "noImplicitReturns": false,
+        "noImplicitReturns": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,
         "allowJs": true,
         "skipLibCheck": true,
         "experimentalDecorators": true,
         "strict": true,
-        "allowUnreachableCode": false,
-        "strictNullChecks": true,
-        "declaration": true,
-        "noImplicitAny": true,
-        "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"]
         }
     },
-    "compileOnSave": false,
     "exclude": [
         "node_modules",
+        "build",
+        "dist",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "jest",
+        "src/setupTests.ts",
+        "tslint:latest",
+        "tslint-config-prettier",
+        "./*.js",
         "lib",
         "es",
-        "build",
-        "doc",
-        "*.md",
-        "./*.js"
+        "mock"
     ]
 }

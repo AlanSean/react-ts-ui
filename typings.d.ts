@@ -9,7 +9,6 @@ declare module '*.jpeg';
 declare module '*.gif';
 declare module '*.bmp';
 declare module '*.tiff';
-declare module 'classnames';
 interface cb { (key?: number): void; }
 
 // google analytics interface
@@ -61,6 +60,19 @@ interface Location {
     hash: string;
     key?: string;
 }
-declare module 'video-react';
 
 
+interface Route extends MenuDataItem {
+    routes?: Route[];
+    authority?: string[] | string;
+    children?: MenuDataItem[];
+    hideChildrenInMenu?: boolean;
+    hideInMenu?: boolean;
+    icon?: React.ReactNode;
+    locale?: string | false;
+    name?: string;
+    key?: string;
+    path?: string;
+    [key: string]: any;
+    parentKeys?: string[];
+}

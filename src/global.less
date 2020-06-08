@@ -1,0 +1,122 @@
+//重置样式
+@import './static/css/reset.css';
+//便捷简写
+@import './static/less/index.less';
+//装饰插件的样式
+@import './static/less/decorate/index.less';
+//loading样式
+@import './static/less/spinner.less';
+
+
+@import './react-ui/Tabs/style/index.less';
+@import './react-ui/PullToRefresh/style/index.less';
+@import './react-ui/Shade/style/index.less';
+
+body{
+    box-sizing: border-box;
+}
+* {
+    -webkit-overflow-scrolling: touch;
+}
+.offline{
+    .h(100vh);
+    .bg(#fff);
+}
+video::-internal-media-controls-download-button {
+    display: none;
+}
+/* 后台专用 */
+#contentUnderline {
+    text-decoration: underline !important;
+    font-weight: bold;
+    color: #516ae6;
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+.fixed-center{
+    max-width: 7.5rem;
+    .w(7.5rem);
+    .fixed-top;
+    .b(0);
+    .m(0 auto);
+    z-index: 100;
+    
+}
+.fixed-top-center{
+    max-width: 7.5rem;
+    .w(7.5rem);
+    .fixed-top;
+    .m(0 auto);
+}
+.fixed-bottom-center{
+    max-width: 7.5rem;
+    .w(7.5rem);
+    .fixed-bottom;
+    .m(0 auto);
+}
+//闪烁
+.time-twinkle{
+    animation: show-hide 2s infinite;
+    position: absolute
+}
+@keyframes show-hide{
+    0%{
+        opacity: 1;
+    }
+    10%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+/* 单关 */
+.single_parent {
+    position: relative;
+}
+
+.single_parent .single {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0.35rem;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    color: #fff;
+    font-size: 0.24rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.single_parent .single .single_bottom {
+    position: relative;
+    border-left: 0.18rem solid transparent;
+    border-right: 0.18rem solid transparent;
+    border-top: 0.06rem solid #516AE6;
+    display: block;
+    z-index: 9;
+}
+
+.single_parent .single .text {
+    display: block;
+    width: 0.35rem;
+    height: 0.30rem;
+    background-color: #516AE6;
+    position: relative;
+    z-index: 10;
+}

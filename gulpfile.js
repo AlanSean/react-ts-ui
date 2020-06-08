@@ -10,8 +10,8 @@ const gulp = require("gulp"),
 	
 
 const tsResult = gulp.src([
-		'src/**/*.tsx',
-		'src/**/*.ts',
+		'src/react-ui/**/*.tsx',
+		'src/react-ui/**/*.ts',
 		'typings.d.ts'
 	]),
 	lib_tsConfig =getTsConfig(),
@@ -48,7 +48,7 @@ gulp.task('es-tsd', done => {
 	done()
 });
 gulp.task('less', done => {
-	gulp.src('src/**/*.less')
+	gulp.src('src/react-ui/**/*.less')
 		.pipe(autoprefixer())
 		.pipe(less())
 		.pipe(gulp.dest(libDir))
@@ -57,7 +57,7 @@ gulp.task('less', done => {
 });
 gulp.task('copyLess',  function() {
 	return gulp.src([
-		'src/**/*.less',
+		'src/react-ui/**/*.less',
 	])
 	.pipe(gulp.dest(esDir))
 	.pipe(gulp.dest(libDir))

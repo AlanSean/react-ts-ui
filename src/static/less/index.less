@@ -1,0 +1,266 @@
+// @import './font.less';
+@import './color.less';
+
+body,
+html,#root {
+    width: 100%;
+    height: 100%
+}
+
+body {
+    max-width:7.5rem;
+    margin: 0 auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.iconfont {
+    vertical-align: middle;
+}
+
+#app {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 750*@px;
+    height: 100%;
+}
+
+.pdb140 {
+    padding-bottom: 140*@px;
+}
+
+.iconfont {
+    line-height: normal;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.text-ellipsis{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.box-sizing {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.iconfont {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+//color
+
+.pdb100 {
+    padding-bottom: 100*@px;
+}
+
+.mint-loadmore {
+    min-height: 80vh;
+    box-sizing: border-box;
+}
+
+
+.ft-left {
+    float: left;
+}
+
+.ft-right {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.over-flow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.box-shadow {
+    box-shadow: 0 0 20*@px rgba(0, 0, 0, .05);
+}
+
+.text-wrap {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.fixed-top {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.fixed-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 11;
+}
+
+.box-sizing {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.rotate(@deg: 45deg) {
+    transform: rotate(@deg);
+    -webkit-transform: rotate(@deg);
+}
+
+.border-radius(@radius: 10*@px) {
+    border-radius: @radius;
+}
+.line-throw {
+    text-decoration: line-through;
+}
+
+
+.m-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 30;
+    color: #fff;
+    height: 90*@px;
+    line-height: 90*@px;
+    font-size: 34*@px;
+    text-align: center;
+    background: @color-main;
+    max-width: 7.5rem;
+    margin: 0 auto;
+    .border-bottom-h;
+    text-align: center;
+    .box-shadow;
+
+    span {
+        color: #fff;
+    }
+
+    .m-left {
+        position: absolute;
+        left: 0*@px;
+        padding: 0 25*@px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: @font-color-grey;
+
+        .ui-trigger {
+            -webkit-transform: rotate(-135deg);
+            -moz-transform: rotate(-135deg);
+            -ms-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+            width: 20*@px;
+            height: 20*@px;
+        }
+    }
+
+    .m-right {
+        position: absolute;
+        right: 25*@px;
+        .ft(24);
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
+
+
+#app {
+    padding-top: 90*@px;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+/* 禁止滚动  和背景变白*/
+
+.bodyOverFlow {
+    position: fixed;
+    width: 100%;
+}
+
+.wirteBg {
+    background-color: #fff;
+}
+
+//  复制文字
+
+.copyText {
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+    -o-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+// 去除全局 #app的造成padding影响 顶部
+
+.paste-roof {
+    position: relative;
+    top: -90*@px;
+}
+
+// 绝对居中  需要有宽高
+.center-middle {
+    text-align: center;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.center-middle::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.center-middle .center-middle-child {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    white-space: normal;
+}
