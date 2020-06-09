@@ -1,7 +1,16 @@
 
 import test from './test'; //测试
 
-let routes = [];
+let routes = [
+    {
+        name: 'shade',
+        path: '/shade',
+        component: 'Shade/index',
+        meta:{
+            title: '弹窗遮层'
+        }
+    }
+];
 
 const UMI_ENV = process.env.UMI_ENV;
 if (UMI_ENV == 'local') {
@@ -13,11 +22,6 @@ export default {
             path: '/',
             component: '../layouts/index',
             routes: [
-                {
-                    path: '/',
-                    redirect: '/home',
-                    exact: true,
-                },
                 ...routes
             ]
         }

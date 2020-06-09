@@ -22,18 +22,8 @@ const shadowstyles = getAnimationClassNames('shadow'),
 
 
 class Shade extends React.Component<ShadeProps> {
-    private shadowClass: string;
-    private ContentAnimation!: ContentAnimation;
-    private animationName!: string;
     constructor(props: ShadeProps) {
         super(props);
-        //外层class样式
-        this.shadowClass = props.shadowClass || 'Shade-defaultShadow';
-        this.ContentAnimation = this.getclassNames();
-        //点击遮罩是否关闭
-        // this.maskClosable = props.maskClosable != undefined ? props.maskClosable : true;
-        //up 从下往上淡入 scale从小到大 居中淡入  left 屏幕右侧到左侧淡入
-        this.animationName = props.animation && /left|scale|bottom|right/g.test(props.animation) ? props.animation : 'up'; 
     }
     componentDidMount() {
         scorllStop();
@@ -46,7 +36,7 @@ class Shade extends React.Component<ShadeProps> {
             scorllStop(nextProps.isShow);
         }
     }
-    getclassNames = () => {
+    getclassNames = ():ContentAnimation => {
         const { animation } = this.props;
         if (animation == 'scale') {
             return scales
@@ -67,8 +57,8 @@ class Shade extends React.Component<ShadeProps> {
         this.props.hide && this.props.hide();
     }
     render() {
-        let { children, isShow } = this.props;
-        
+        let { children, isShow,animation,shadowClass } = this.props,
+             animationName = animation && /left|scale|bottom|right/g.test(animation) ? animation : 'up';
         return (
             <div
                 className={classnames('Shade-fixed-center', 'Shade-shade', !isShow ? 'Shade-hide' : 'Shade-show')}>
@@ -79,18 +69,15 @@ class Shade extends React.Component<ShadeProps> {
                     <div className={classnames(
                         'Shade-fixed-center',
                         'Shade-shadow',
-                        this.shadowClass,
-                      
-                        )} onClick={this.close} />
+                        shadowClass || 'Shade-defaultShadow',
+                    )} onClick={this.close} />
                 </CSSTransition>
-                {
-                    <CSSTransition in={!this.props.isShow} timeout={200}
-                        classNames={this.ContentAnimation}>
-                        <div className={classnames('Shade-content', 'Shade-'+this.animationName+'Content')}>
-                            {children}
-                        </div>
-                    </CSSTransition>
-                }
+                <CSSTransition in={!isShow} timeout={200}
+                    classNames={this.getclassNames()}>
+                    <div className={classnames('Shade-content', 'Shade-'+animationName+'Content')}>
+                        {children}
+                    </div>
+                </CSSTransition>
             </div>
         )
     }

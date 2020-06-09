@@ -62,17 +62,4 @@ interface Location {
 }
 
 
-interface Route extends MenuDataItem {
-    routes?: Route[];
-    authority?: string[] | string;
-    children?: MenuDataItem[];
-    hideChildrenInMenu?: boolean;
-    hideInMenu?: boolean;
-    icon?: React.ReactNode;
-    locale?: string | false;
-    name?: string;
-    key?: string;
-    path?: string;
-    [key: string]: any;
-    parentKeys?: string[];
-}
+

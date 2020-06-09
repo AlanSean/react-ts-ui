@@ -1,7 +1,9 @@
-import React  from 'react';
-// import { Toast } from 'antd-mobile'
-import {  NavBar } from '@/pages/components/index';
+import React from 'react';
+import { Props,Router }  from './PropsType';
+import { NavBar } from '@/pages/components/index';
 import { withAliveScope, withActivation } from '@/react-ui/index';
+import { getMetaFromRouter } from '@/static/js/utils';
+
 // keep注销配置表
 const KeepAliveDrop = {
     //key :当前路由 ,values 要卸载的缓存模块  name
@@ -11,38 +13,36 @@ const KeepAliveDrop = {
         'my'
     ],
 }
-class Layouts extends React.Component<any,any>{
-    constructor(props: any){
+
+//这里飘红的原因是无法匹配到 react-activation 所写的类型 故使用  ts-ignore忽略
+// @ts-ignore
+@withAliveScope
+// @ts-ignore
+@withActivation
+class Layouts extends React.Component<Props,any>{
+    constructor(props: Props) {
         super(props);
-        const { drop, history  } = props;
-        this.state = {
-            onLine: true
-        }
-        history.listen((route:Route) => {
-            const KeepAliveNameArray = KeepAliveDrop[route.pathname]
+        const { drop, history } = props;
+        history.listen(route => {
+            const KeepAliveNameArray:string[] = KeepAliveDrop[route.pathname]
             if (KeepAliveNameArray) {
-                KeepAliveNameArray.forEach( (name:string) => {
-                    drop(name); 
+                KeepAliveNameArray.forEach(name => {
+                    drop(name);
                 });
             }
         });
-        window.ononline = () => {
-            this.setState({
-                onLine: true
-            })
-        }
     }
     render() {
-        if (navigator.onLine && this.state.onLine){
-            return this.props.children
-        } else {
-            return (
-                <div className="offline">
-                    <NavBar backHide={true}/>
-                </div>
-            )
-        }
-        
+        const { location, route: { routes } } = this.props;
+        console.log(this.props.route)
+        const router = getMetaFromRouter<Router>(routes, location.pathname);
+        return (
+            <div>
+                <NavBar backHide={true}>{router && router.meta && router.meta.title}</NavBar>
+                {this.props.children}
+            </div>
+        )
+
     }
 }
-export default withAliveScope(withActivation(Layouts));
+export default Layouts;
