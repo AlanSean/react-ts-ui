@@ -33,7 +33,7 @@ pullOnLoad?: () => void
     </PullToRefresh>
 
 
-//BOM元素 scroll容器id 默认监听window
+//DOM元素 scroll容器id 默认监听window
 //监听window时 会以 #root>div 元素的offsetHeight来做计算,如果定死了可能出现意想不到的bug
 scrollDomId?:string
 
