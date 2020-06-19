@@ -10,3 +10,9 @@ export const getMetaFromRouter = <T extends { path: string }>(
 ): T | undefined => {
     return router.find(({ path }) => path && pathRegexp(path).exec(pathname));
 };
+
+export const delay = (timeout: number) => {
+    return new Promise(resolve => {
+        setTimeout(resolve, timeout*1000)
+    })
+}

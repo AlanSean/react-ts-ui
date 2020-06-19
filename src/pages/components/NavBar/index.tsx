@@ -16,7 +16,7 @@ function Back(){
     return (
         <div key="iconshezhi" onClick={HistoryBack} className={styles.back}>
             <svg className={classnames("icon")} aria-hidden="true" >
-                <use xlinkHref="#PPfanhui" />
+                <use xlinkHref="#fanhui" />
             </svg>
         </div>
     )

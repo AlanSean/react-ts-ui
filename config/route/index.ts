@@ -1,13 +1,29 @@
 
 import test from './test'; //测试
 
-let routes = [
+export let routes = [
+    {
+        name: 'home',
+        path: '/',
+        component: 'home/index',
+        meta: {
+            title: '首页'
+        }
+    },
     {
         name: 'shade',
         path: '/shade',
-        component: 'Shade/index',
+        component: 'shade/index',
         meta:{
             title: '弹窗遮层'
+        }
+    },
+    {
+        name: 'tabs',
+        path: '/tabs',
+        component: 'tabs/index',
+        meta: {
+            title: 'Tabs'
         }
     }
 ];

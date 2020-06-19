@@ -34,11 +34,10 @@ class Layouts extends React.Component<Props,any>{
     }
     render() {
         const { location, route: { routes } } = this.props;
-        console.log(this.props.route)
         const router = getMetaFromRouter<Router>(routes, location.pathname);
         return (
             <div>
-                <NavBar backHide={true}>{router && router.meta && router.meta.title}</NavBar>
+                <NavBar backHide={router && router.path =='/'}>{router && router.meta && router.meta.title}</NavBar>
                 {this.props.children}
             </div>
         )

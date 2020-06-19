@@ -11,7 +11,7 @@ export interface TablistProps{
     onChange?: (tab: TabData, index: number) => void; //tab切换时触发
     onClick?: (tab: TabData, index: number) => void; //点击回调
     onFixed?: (isFixed: boolean) => void;// 开启吸顶后 吸顶状态变化触发回调 
-    fixedTop?: boolean | number;//开启吸顶并设置 top的值
+    fixedTop?: number;//开启吸顶并设置 top的值
     isAnimate?:boolean;//容器是否开启动画
     activeClass?:string;//tab选中的样式
     defaultBarClass?:string;//修改tab 条的样式

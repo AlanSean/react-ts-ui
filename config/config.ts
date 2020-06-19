@@ -30,15 +30,7 @@ const config: IConfig = {
         }
     ],
     devServer: {
-        proxy: {
-            "/wapapi": {
-                target:'http://dev-pptvwx.catjc.com',
-                changeOrigin: true,
-                pathRewrite: {
-                    "^/wapapi": ""
-                }
-            }
-        }
+
     },
     plugins: [
         // ref: https://umijs.org/plugin/umi-plugin-react.html
