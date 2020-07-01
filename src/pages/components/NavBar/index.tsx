@@ -5,11 +5,11 @@ import router from 'umi/router';
 import styles from './index.less';
 import classnames from 'classnames';
 function HistoryBack(){
-    if (/first\=1/g.test(decodeURIComponent(window.location.href))){
-        router.push('/home');
-   } else {
+    if (window.history.length > 1 && window.history.length != 2) {
         router.goBack();
-   }
+    } else {
+        router.push('/');
+    }
 }
 //返回
 function Back(){
