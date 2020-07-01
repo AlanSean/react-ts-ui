@@ -3,8 +3,8 @@ import routes from './route';
 import { resolve }  from 'path';
 // ref: https://umijs.org/config/
 const config: IConfig = {
-    publicPath:'/pptvwap/',
-    base: '/pptvwap/',
+    publicPath:'/',
+    base: '/',
     treeShaking: true,
     ...routes,
     chainWebpack(config){

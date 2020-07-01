@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "cross-env UMI_ENV=local   MOCK=none umi dev",
+    "start": "cross-env  MOCK=none umi dev",
     "build": "umi build"
   },
   "author": "",
