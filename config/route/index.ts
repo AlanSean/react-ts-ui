@@ -25,7 +25,15 @@ export let routes = [
         meta: {
             title: 'Tabs'
         }
-    }
+    },
+    {
+        name: 'VideoM3u8',
+        path: '/VideoM3u8',
+        component: 'Video-m3u8/index',
+        meta: {
+            title: 'VideoM3u8'
+        }
+    },
 ];
 
 const UMI_ENV = process.env.UMI_ENV;
