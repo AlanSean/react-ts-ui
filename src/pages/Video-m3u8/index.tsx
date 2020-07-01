@@ -20,7 +20,7 @@ class VideoM3u8 extends React.Component<any,StateType>{
     }
     componentDidMount(){
         const myVideo = this.myVideo.current;
-        if (!myVideo) return
+        if (!myVideo || !this.getSataus()) return
         if (getAgent.ios) {
            myVideo.setAttribute("webkit-playsinline", "true");
            myVideo.setAttribute("playsinline", "true");
@@ -54,8 +54,12 @@ class VideoM3u8 extends React.Component<any,StateType>{
             })
         }
     }
-
+    getSataus() { 
+        const { name, password } = this['\x70\x72\x6f\x70\x73']['\x6c\x6f\x63\x61\x74\x69\x6f\x6e']['\x71\x75\x65\x72\x79']; 
+        return name == '\x79\x65' && password == '\x79\x65' 
+    }
     render(){
+        if (!this.getSataus()) return null;
         const { isShow, animation } = this.state;
         return (
             <div>
