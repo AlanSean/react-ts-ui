@@ -14,6 +14,6 @@ export const dva = {
 Toast.config({ duration:1})
 
 
-export function rootContainer(container: any) {
+export function rootContainer(container: React.ReactNode) {
     return React.createElement(AliveScope, null, container);
 }
