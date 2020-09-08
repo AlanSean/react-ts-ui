@@ -4,7 +4,7 @@ import { resolve }  from 'path';
 // ref: https://umijs.org/config/
 const config: IConfig = {
     publicPath:'/',
-    base: '/',
+    base: '/v2/',
     treeShaking: true,
     ...routes,
     chainWebpack(config){

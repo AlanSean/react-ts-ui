@@ -21,8 +21,8 @@
     "react-transition-group": "^4.3.0",
     "umi-plugin-react": "^1.14.9",
     "vcurve": "^1.0.3",
-    "video.js": "^7.8.3",
-    "videojs-landscape-fullscreen": "^1.5.1"
+    "video.js": "^7.8.4",
+    "videojs-landscape-fullscreen": "^1.6.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.4",
