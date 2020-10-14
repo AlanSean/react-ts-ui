@@ -4,7 +4,22 @@
   "description": "",
   "scripts": {
     "start": "cross-env  MOCK=none umi dev",
-    "build": "umi build"
+    "build": "umi build",
+    "test": "umi test",
+    "lint:es": "eslint --ext .js src mock tests",
+    "lint:ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +28,7 @@
   "dependencies": {
     "@ant-design/pro-layout": "^5.0.10",
     "@types/video.js": "^7.3.10",
+    "@umijs/fabric": "^2.2.2",
     "antd": "^3.19.5",
     "classnames": "^2.2.6",
     "dva": "2.6.0-beta.16",
