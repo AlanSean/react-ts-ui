@@ -22,21 +22,23 @@
     }
   },
   "lint-staged": {
-		"*.{ts,tsx}": [
-			"tslint --fix",
-			"git add"
-		],
-		"*.{js,jsx}": [
-			"eslint --fix",
-			"git add"
-		]
-	},
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "main": "lib/index.js",
   "module": "es/index.js",
   "dependencies": {
     "@ant-design/pro-layout": "^5.0.10",
+    "@commitlint/cli": "9.1.2",
+    "@commitlint/config-conventional": "9.1.2",
     "@types/video.js": "^7.3.10",
     "@umijs/fabric": "^2.2.2",
     "antd": "^3.19.5",
@@ -93,10 +95,10 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-strip-code": "^0.1.4",
     "gulp-typescript": "^5.0.1",
-    "husky": "^0.14.3",
+    "husky": "4.2.5",
     "less-plugin-autoprefix": "^2.0.0",
     "less-plugin-npm-import": "^2.1.0",
-    "lint-staged": "^7.2.2",
+    "lint-staged": "10.2.13",
     "merge2": "^1.2.1",
     "postcss": "^7.0.17",
     "postcss-less": "^3.1.4",
