@@ -21,6 +21,16 @@
       "path": "cz-customizable"
     }
   },
+  "lint-staged": {
+		"*.{ts,tsx}": [
+			"tslint --fix",
+			"git add"
+		],
+		"*.{js,jsx}": [
+			"eslint --fix",
+			"git add"
+		]
+	},
   "author": "",
   "license": "ISC",
   "main": "lib/index.js",
