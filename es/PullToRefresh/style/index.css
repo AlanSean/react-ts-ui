@@ -1,0 +1,20 @@
+.pullToRefresh .pull-transition {
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+}
+.pullToRefresh .pull-content {
+  position: relative;
+  -webkit-transform-origin: left top 0;
+  -ms-transform-origin: left top 0;
+  transform-origin: left top 0;
+}
+.pullToRefresh .pull-content .pull-indicator {
+  height: 25px;
+  line-height: 25px;
+  margin-top: -25px;
+  color: grey;
+  text-align: center;
+}
+.pullToRefresh .pull-content .pull-indicator > * {
+  display: inline-block;
+}

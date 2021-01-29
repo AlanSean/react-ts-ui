@@ -1,0 +1,23 @@
+.Shade-up__enter{
+    opacity: 1;
+    transform: translate(-50%,-50%);
+}
+.Shade-up__enterActive {
+    opacity: 0;
+    transform: translate(-50%,-30%);
+    transition: all 200ms;
+}
+
+.Shade-up__exit {
+    opacity: 0;
+    transform: translate(-50%,-30%);
+}
+.Shade-up__exitActive{
+    opacity: 1;
+    transform: translate(-50%,-50%);
+    transition: all 200ms;
+}
+.Shade-up__exitDone{
+    transform: translate(-50%,-50%);
+    opacity: 1;
+}

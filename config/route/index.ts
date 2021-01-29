@@ -1,7 +1,12 @@
+/*
+ * @Author: Alan
+ * @LastEditors: Alan
+ */
 
 import test from './test'; //测试
+import desinMode from './DesignMode';//设计模式
 
-export let routes = [
+export const routes = [
     {
         name: 'home',
         path: '/',
@@ -14,7 +19,7 @@ export let routes = [
         name: 'shade',
         path: '/shade',
         component: 'shade/index',
-        meta:{
+        meta: {
             title: '弹窗遮层'
         }
     },
@@ -34,14 +39,16 @@ export let routes = [
             title: 'VideoM3u8'
         }
     },
+    desinMode
 ];
 
-const UMI_ENV = process.env.UMI_ENV;
+const { UMI_ENV } = process.env;
+
 if (UMI_ENV == 'local') {
     routes.push(...test);
 }
-export default {
-    routes:[
+const route = {
+    routes: [
         {
             path: '/',
             component: '../layouts/index',
@@ -50,4 +57,6 @@ export default {
             ]
         }
     ]
-}
+};
+
+export default route;

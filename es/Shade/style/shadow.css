@@ -1,0 +1,19 @@
+.Shade-shadow__enter {
+  opacity: 1;
+}
+.Shade-shadow__enterActive {
+  opacity: 0;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+.Shade-shadow__exit {
+  opacity: 0;
+}
+.Shade-shadow__exitActive {
+  opacity: 1;
+  -webkit-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+}
+.Shade-shadow__exitDone {
+  opacity: 1;
+}

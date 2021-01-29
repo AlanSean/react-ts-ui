@@ -1,0 +1,24 @@
+.Shade-bottom__enter {
+  opacity: 1;
+  bottom: -100%;
+}
+.Shade-bottom__enterActive {
+  opacity: 0;
+  bottom: -100%;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+.Shade-bottom__exit {
+  opacity: 0;
+  bottom: -100%;
+}
+.Shade-bottom__exitActive {
+  opacity: 1;
+  bottom: 0;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+.Shade-bottom__exitDone {
+  bottom: 0;
+  opacity: 1;
+}

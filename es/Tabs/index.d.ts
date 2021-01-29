@@ -1,0 +1,32 @@
+import React from 'react';
+import { TablistProps, TablistState, TabData } from './PropsType';
+declare class Tablist extends React.Component<TablistProps, TablistState> {
+    private ticking;
+    private tabsRefs;
+    private activeClass;
+    private defaultClass;
+    private tabWidth;
+    private defaultBarClass;
+    private barWidth;
+    private isAnimate;
+    private isBarUnderline;
+    private tablistWidth;
+    private pullToRefresh;
+    private childRefs;
+    constructor(props: TablistProps);
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    componentDidUpdate(oldProps: TablistProps): void;
+    scrollChange: () => void;
+    cancelAnimationFrame(): void;
+    onChange: (tab: TabData, index: number) => void;
+    onClick: (tab: TabData, index: number) => void;
+    childredInit: (index: number) => any;
+    underline: () => JSX.Element | null;
+    reload: (reload: Function) => void;
+    pullOnLoad: () => void;
+    contentWarpElmen: () => JSX.Element;
+    PullToRefreshElement: () => JSX.Element;
+    render(): JSX.Element;
+}
+export default Tablist;

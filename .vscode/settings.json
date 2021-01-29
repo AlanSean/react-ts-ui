@@ -1,4 +1,7 @@
+//https://code.visualstudio.com/docs/getstarted/settings
+//设置表
 {
     "editor.fontSize": 18,
-    "editor.fontWeight": "100"
+    "editor.fontWeight": "100",
+    "editor.tabsize": 4 
 }

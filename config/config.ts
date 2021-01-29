@@ -1,14 +1,19 @@
+/*
+ * @Author: Alan
+ * @LastEditors: Alan
+ */
 import { IConfig } from 'umi-types';
-import routes from './route';
-import { resolve }  from 'path';
+import { resolve } from 'path';
+import route from './route';
+
 // ref: https://umijs.org/config/
 const config: IConfig = {
     publicPath:'/',
-    base: '/v2/',
+    base: '/',
     treeShaking: true,
-    ...routes,
-    chainWebpack(config){
-        config.module
+    ...route,
+    chainWebpack(webconfig){
+        webconfig.module
             .rule('sass-resources-loader')
             .test(/\.less$/)
             .use('sass-resources-loader')
@@ -45,11 +50,11 @@ const config: IConfig = {
                     /services\//,
                     /model\.(t|j)sx?$/,
                     /service\.(t|j)sx?$/,
-                    /components\//,
-                ],
-            },
+                    /components\//
+                ]
+            }
         }]
-    ],
-}
+    ]
+};
 
 export default config;

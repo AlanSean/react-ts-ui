@@ -11,7 +11,7 @@
 
 # misc
 .DS_Store
-es
+# es
 lib
 # umi
 .umi

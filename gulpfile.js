@@ -1,3 +1,7 @@
+/*
+ * @Author: Alan
+ * @LastEditors: Alan
+ */
 const gulp = require("gulp"),
 	ts = require("gulp-typescript"),
 	less = require("gulp-less"),

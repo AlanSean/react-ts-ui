@@ -1,20 +1,20 @@
 import React from 'react';
-import classnames from 'classnames';
-import {  ShadeProps, ContentAnimation } from './interface';
 import { CSSTransition } from 'react-transition-group';
+import BoxShadow from '@/react-ui/BoxShadow';
+import { ShadeProps, ContentAnimation } from './interface';
 import { scorllStop } from '../static/js/factory';
 
-function getAnimationClassNames(module:string){
+function getAnimationClassNames(module: string) {
     return {
-        "enter": 'Shade-'+module+"__enter",
-        "enterActive": 'Shade-'+module+"__enterActive",
-        "exit": 'Shade-'+module+"__exit",
-        "exitActive": 'Shade-'+module+"__exitActive",
-        "exitDone": 'Shade-'+module+"__exitDone",
-    }
+        'enter': `Shade-${module}__enter`,
+        'enterActive': `Shade-${module}__enterActive`,
+        'exit': `Shade-${module}__exit`,
+        'exitActive': `Shade-${module}__exitActive`,
+        'exitDone': `Shade-${module}__exitDone`
+    };
 }
-const shadowstyles = getAnimationClassNames('shadow'),
-    left = getAnimationClassNames('left'),
+
+const left = getAnimationClassNames('left'),
     right = getAnimationClassNames('right'),
     up = getAnimationClassNames('up'),
     bottom = getAnimationClassNames('bottom'),
@@ -24,6 +24,11 @@ const shadowstyles = getAnimationClassNames('shadow'),
 class Shade extends React.Component<ShadeProps> {
     constructor(props: ShadeProps) {
         super(props);
+
+        props.shadowClass && BoxShadow.config({
+            shadowClass: props.shadowClass
+        });
+
     }
     componentDidMount() {
         scorllStop();
@@ -31,55 +36,62 @@ class Shade extends React.Component<ShadeProps> {
     componentWillUnmount() {
         scorllStop();
     }
-    componentWillReceiveProps(nextProps: ShadeProps){
-        if (nextProps.isShow != this.props.isShow){
+    componentWillReceiveProps(nextProps: ShadeProps) {
+        if (nextProps.isShow != this.props.isShow) {
             scorllStop(nextProps.isShow);
+            if (nextProps.isShow) {
+                BoxShadow.show();
+            } else {
+                BoxShadow.hide();
+                this.props.hide && this.props.hide();
+            }
         }
     }
-    getclassNames = ():ContentAnimation => {
+
+    getclassNames = (): ContentAnimation => {
         const { animation } = this.props;
+
         if (animation == 'scale') {
-            return scales
+            return scales;
         }
         if (animation == 'left') {
-            return left
+            return left;
         }
         if (animation == 'right') {
-            return right
+            return right;
         }
         if (animation == 'bottom') {
-            return bottom
+            return bottom;
         }
-        return up
+        return up;
     }
 
     close = () => {
         this.props.hide && this.props.hide();
     }
+
     render() {
-        let { children, isShow,animation,shadowClass } = this.props,
-             animationName = animation && /left|scale|bottom|right/g.test(animation) ? animation : 'up';
+        let { children, isShow, animation } = this.props,
+            animationName = animation && /left|scale|bottom|right/g.test(animation) ? animation : 'up';
+
         return (
             <div
-                className={classnames('Shade-fixed-center', 'Shade-shade', !isShow ? 'Shade-hide' : 'Shade-show')}>
-                <CSSTransition 
-                    in={!isShow} 
-                    timeout={300}
-                    classNames={shadowstyles}>
-                    <div className={classnames(
-                        'Shade-fixed-center',
-                        'Shade-shadow',
-                        shadowClass || 'Shade-defaultShadow',
-                    )} onClick={this.close} />
-                </CSSTransition>
+                className={`
+                    Shade-fixed-center
+                    Shade-shade 
+                    ${!isShow ? 'Shade-hide' : 'Shade-show'}
+                `}
+                onClick={this.close}>
                 <CSSTransition in={!isShow} timeout={200}
                     classNames={this.getclassNames()}>
-                    <div className={classnames('Shade-content', 'Shade-'+animationName+'Content')}>
+                    <div
+                        className={`Shade-content Shade-${animationName}Content`}
+                        onClick={e => e.stopPropagation()}>
                         {children}
                     </div>
                 </CSSTransition>
             </div>
-        )
+        );
     }
 }
 export default Shade;

@@ -1,39 +1,41 @@
-import React,{useState} from 'react';
-import css from './index.less';
+import React, { useState } from 'react';
 import { Shade } from '@/react-ui/index';
+import css from './index.less';
+
 export default () => {
-    const [isShow,setIsShow] = useState<boolean>(false),
-            [animation,setAnimation] = useState<string>('up');
+    const [isShow, setIsShow] = useState<boolean>(false),
+        [animation, setAnimation] = useState<string>('up');
+    
     return (
         <div className={css.shade_example}>
-            <button onClick={() => {
+            <button type="button" onClick={() => {
                 setIsShow(true);
-                setAnimation('up')
+                setAnimation('up');
             }}>up</button>
-            <button onClick={() => {
+            <button type="button" onClick={() => {
                 setIsShow(true);
-                setAnimation('left')
+                setAnimation('left');
             }}>left</button>
-            <button onClick={() => {
+            <button type="button" onClick={() => {
                 setIsShow(true);
-                setAnimation('right')
+                setAnimation('right');
             }}>right</button>
-            <button onClick={() => {
+            <button type="button" onClick={() => {
                 setIsShow(true);
-                setAnimation('scale')
+                setAnimation('scale');
             }}>scale</button>
-            <button onClick={() => {
+            <button type="button" onClick={() => {
                 setIsShow(true);
-                setAnimation('bottom')
+                setAnimation('bottom');
             }}>bottom</button>
-            <Shade 
-                isShow={isShow} 
+            <Shade
+                isShow={isShow}
                 animation={animation}
                 hide={() => setIsShow(false)}>
-                <div style={{background:"#fff",height:"100%",minHeight:'400px',minWidth:'5rem'}}>
+                <div style={{ background: '#fff', height: '100%', minHeight: '400px', minWidth: '5rem' }}>
                     Shade
                 </div>
             </Shade>
         </div>
-    )
-}
+    );
+};

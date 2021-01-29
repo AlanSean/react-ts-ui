@@ -1,3 +1,7 @@
+/*
+ * @Author: Alan
+ * @LastEditors: Alan
+ */
 import React from 'react';
 import { Toast } from 'antd-mobile';
 import { AliveScope } from 'react-activation';
@@ -11,7 +15,7 @@ export const dva = {
     }
 };
 
-Toast.config({ duration:1})
+Toast.config({ duration:1});
 
 
 export function rootContainer(container: React.ReactNode) {

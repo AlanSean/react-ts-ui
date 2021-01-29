@@ -18,7 +18,7 @@ module.exports = function (modules) {
         [
             resolve('@babel/plugin-transform-runtime'),
             {
-                helpers: false,
+                version: '^7.10.4',
             },
         ],
         resolve('@babel/plugin-transform-spread'),

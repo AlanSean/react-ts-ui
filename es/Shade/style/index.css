@@ -1,0 +1,195 @@
+.Shade-fixed-center {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 101;
+}
+.Shade-show {
+  pointer-events: all;
+}
+.Shade-hide {
+  pointer-events: none;
+}
+.Shade-shadow {
+  opacity: 0;
+}
+.Shade-defaultShadow {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.Shade-content {
+  position: absolute;
+  margin: auto;
+  opacity: 0;
+  z-index: 102;
+}
+.Shade-upContent,
+.Shade-scaleContent {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -30%);
+  -ms-transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);
+}
+.Shade-leftContent {
+  left: -100%;
+  top: 0;
+  bottom: 0;
+}
+.Shade-rightContent {
+  right: -100%;
+  top: 0;
+  bottom: 0;
+}
+.Shade-bottomContent {
+  bottom: -100%;
+  left: 0;
+  right: 0;
+}
+.Shade-up__enter {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.Shade-up__enterActive {
+  opacity: 0;
+  transform: translate(-50%, -30%);
+  transition: all 200ms;
+}
+.Shade-up__exit {
+  opacity: 0;
+  transform: translate(-50%, -30%);
+}
+.Shade-up__exitActive {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all 200ms;
+}
+.Shade-up__exitDone {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.Shade-shadow {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 100;
+}
+.Shade-defaultShadow {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.Shade-shadow-enter {
+  opacity: 0;
+}
+.Shade-shadow-enter-active {
+  opacity: 1;
+  transition: all 200ms;
+}
+.Shade-shadow-enter-done {
+  pointer-events: all;
+  opacity: 1;
+}
+.Shade-shadow-exit {
+  opacity: 1;
+}
+.Shade-shadow-exit-active {
+  opacity: 0;
+  transition: all 200ms ease-in;
+}
+.Shade-shadow-exit-done {
+  pointer-events: none;
+  opacity: 0;
+}
+.Shade-scale__enter {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.Shade-scale__enterActive {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3);
+  transition: all 200ms;
+}
+.Shade-scale__exit {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3);
+}
+.Shade-scale__exitActive {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 200ms;
+}
+.Shade-scale__exitDone {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.Shade-left__enter {
+  opacity: 1;
+  left: -100%;
+}
+.Shade-left__enterActive {
+  opacity: 0;
+  left: -100%;
+  transition: all 200ms;
+}
+.Shade-left__exit {
+  opacity: 0;
+  left: -100%;
+}
+.Shade-left__exitActive {
+  opacity: 1;
+  left: 0;
+  transition: all 200ms;
+}
+.Shade-left__exitDone {
+  left: 0;
+  opacity: 1;
+}
+.Shade-bottom__enter {
+  opacity: 1;
+  bottom: -100%;
+}
+.Shade-bottom__enterActive {
+  opacity: 0;
+  bottom: -100%;
+  transition: all 200ms;
+}
+.Shade-bottom__exit {
+  opacity: 0;
+  bottom: -100%;
+}
+.Shade-bottom__exitActive {
+  opacity: 1;
+  bottom: 0;
+  transition: all 200ms;
+}
+.Shade-bottom__exitDone {
+  bottom: 0;
+  opacity: 1;
+}
+.Shade-right__enter {
+  opacity: 1;
+  right: -100%;
+}
+.Shade-right__enterActive {
+  opacity: 0;
+  right: -100%;
+  transition: all 200ms;
+}
+.Shade-right__exit {
+  opacity: 0;
+  right: -100%;
+}
+.Shade-right__exitActive {
+  opacity: 1;
+  right: 0;
+  transition: all 200ms;
+}
+.Shade-right__exitDone {
+  right: 0;
+  opacity: 1;
+}

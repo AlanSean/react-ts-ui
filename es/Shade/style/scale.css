@@ -1,0 +1,34 @@
+.Shade-scale__enter {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+.Shade-scale__enterActive {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.3);
+  -ms-transform: translate(-50%, -50%) scale(0.3);
+  transform: translate(-50%, -50%) scale(0.3);
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+.Shade-scale__exit {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) scale(0.3);
+  -ms-transform: translate(-50%, -50%) scale(0.3);
+  transform: translate(-50%, -50%) scale(0.3);
+}
+.Shade-scale__exitActive {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+.Shade-scale__exitDone {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
