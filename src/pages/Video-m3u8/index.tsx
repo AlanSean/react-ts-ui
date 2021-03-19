@@ -59,7 +59,7 @@ class VideoM3u8 extends React.Component<any,StateType>{
         return name == '\x79\x65' && password == '\x79\x65' 
     }
     render(){
-        if (!this.getSataus()) return null;
+        // if (!this.getSataus()) return null;
         const { isShow, animation } = this.state;
         return (
             <div>
